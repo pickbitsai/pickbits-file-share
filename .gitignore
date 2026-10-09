@@ -1,0 +1,14 @@
+/node_modules/
+/.test-tmp/
+/dist/
+/coverage/
+/.demo-data/
+/.tmp/
+/infra/generated/
+/infra/deployment.json
+/file-share.config.json
+.env*
+*.tsbuildinfo
+*.log
+*.pem
+.DS_Store

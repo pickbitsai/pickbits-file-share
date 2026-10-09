@@ -1,0 +1,10 @@
+PickBits File Share
+Copyright 2026 Mark Pickering and PICKBITS LLC
+
+This product includes software developed by PICKBITS LLC.
+"PickBits" and "PickBits File Share" are names of PICKBITS LLC.
+All example/demo people, businesses and locations are synthetic; real city names provide geographic context only.
+
+This product includes shadcn UI components and Tailwind utilities, Copyright (c) 2023 shadcn, under the MIT License.
+The retained components are in components/ui/; their license is reproduced in vendor/shadcn-tailwind-4.13.0.LICENSE.md.
+Third-party npm packages retain their own licenses in the installed distribution.

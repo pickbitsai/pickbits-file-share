@@ -1,0 +1,13 @@
+# Security policy
+
+Report vulnerabilities privately using GitHub private vulnerability reporting on this repository. If it is unavailable, open a minimal issue requesting a private reporting channel without including sensitive details. Include the affected version, operating system, a synthetic reproduction, expected behavior, and observed behavior. Never include customer files, credentials, live recipient links, or AWS account details. Version 0.1.x is supported while it is the latest release line.
+
+PickBits File Share handles untrusted filenames, uploaded bytes, signatures, and recipient links. Authorization bypass, cross-account access, unsafe previews, session theft, MFA bypass, and document substitution are high-priority issues. Preserve the checks documented in README.md: origin validation, CSP, cookie flags, OAuth PKCE/state/nonce, hashed sessions, per-account MFA limits and replay prevention, immutable-ID membership, transactional file quotas, upload staging, and forced downloads for active content.
+
+Production runs in the operator's AWS account using encrypted S3 and DynamoDB, Cognito, Lambda behind CloudFront origin access control, and SES. Encryption is not end-to-end. Operators can access files, metadata, and MFA secrets. Private document links authorize their bearer without sign-in; keep them confidential. Electronic signatures record consent and evidence, not verified recipient identity. Email and saved downloads cannot be recalled.
+
+The demo is only for loopback use with synthetic data. Its two identities and preverified sessions are deliberately fake. It never supplies adapters to the production Lambda and cannot start under NODE_ENV=production or on a non-allocated host. Do not expose it through a tunnel or proxy. Local data and outboxes are not encrypted by this application.
+
+Operators are responsible for budgets, monitoring, incident response, backup/restore drills, SES deliverability, account disablement, and lost-MFA recovery. Disabling a Cognito account blocks its next authenticated request, but existing signed download URLs last up to 60 seconds and document bearer links must be separately voided. There is no malware scanning, compliance certification, self-service MFA recovery, or version restoration UI.
+
+Only synthetic examples belong in public issues or source control. Local config, environment files, generated infrastructure, demo data, and build/test output are gitignored. Run npm run preflight before publication and inspect the changes for sensitive content. The leakscan supplements human review; it is not a guarantee that every possible secret is recognized.

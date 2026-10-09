@@ -1,0 +1,10 @@
+{
+  "forbid": [],
+  "allow": [],
+  "allowTerms": [],
+  "buildDirs": [
+    "dist"
+  ],
+  "buildCommand": "npm run build",
+  "public": true
+}

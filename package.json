@@ -1,0 +1,62 @@
+{
+  "name": "pickbits-file-share",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs test/*.test.mjs",
+    "lint": "eslint .",
+    "demo": "node scripts/demo.mjs",
+    "leakscan": "node test/leakscan.mjs",
+    "consumer": "node test/consumer-install.mjs",
+    "preflight": "npm run typecheck && npm run lint && npm test && npm run build && npm run leakscan && npm run consumer",
+    "configure": "node scripts/configure.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.1130.0",
+    "@aws-sdk/client-dynamodb": "^3.1130.0",
+    "@aws-sdk/client-s3": "^3.1130.0",
+    "@aws-sdk/client-sesv2": "^3.1137.0",
+    "@aws-sdk/lib-dynamodb": "^3.1130.0",
+    "@aws-sdk/s3-presigned-post": "^3.1130.0",
+    "@aws-sdk/s3-request-presigner": "^3.1130.0",
+    "aws-jwt-verify": "^5.2.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "^1.31.0",
+    "otpauth": "^9.5.2",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4",
+    "radix-ui": "^1.6.7",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "eslint": "9.39.4",
+    "tailwindcss": "4.2.1",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "5.9.3",
+    "vite": "8.0.13",
+    "@types/qrcode": "^1.5.6",
+    "esbuild": "^0.28.2",
+    "typescript-eslint": "^8.0.0",
+    "@eslint/js": "^9.39.4",
+    "globals": "^16.0.0",
+    "eslint-plugin-react-hooks": "^7.0.0"
+  },
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Mark Pickering and PICKBITS LLC"
+}

@@ -1,0 +1,13 @@
+{
+  "businessName": "Example Business",
+  "domain": "files.example.com",
+  "hostedZoneId": "ZEXAMPLE",
+  "region": "us-east-2",
+  "certificateRegion": "us-east-1",
+  "stackName": "pickbits-file-share",
+  "ownerEmail": "owner@example.com",
+  "sesFromAddress": "files@example.com",
+  "teamWorkspace": { "members": [] },
+  "quotas": { "perFileBytes": 1073741824, "perMemberBytes": 107374182400 },
+  "mfa": { "owners": "required", "members": "optional" }
+}

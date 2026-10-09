@@ -1,0 +1,17 @@
+PickBits File Share 0.1.0
+
+Node 22.13+, React, TypeScript, Vite, AWS Lambda; Apache-2.0.
+Purpose: one small business owns its team files in its own AWS account.
+Start: npm ci; npm run demo; open http://127.0.0.1:4202.
+Demo: synthetic Mesa landscaping workspace, two fixed identities, disk bytes and JSON metadata, .eml outbox; no provider calls.
+Configuration: file-share.config.example.json -> gitignored file-share.config.json; npm run configure.
+Production: infra/template.mjs; opt-in scripts/deploy-infra.mjs, deploy-api.mjs, deploy-web.mjs, provision-owner.mjs, invite-member.mjs.
+Runtime: server/api.mjs shares handlers between AWS and local adapters; server/lambda.mjs wires AWS only.
+Identity: Cognito immutable account IDs define team membership; invitations do not grant membership. Owner MFA is mandatory.
+Documents: private 30-day bearer links, typed and drawn signatures, signed PDF, SES completion email.
+Limits: not end-to-end encrypted; no desktop sync, malware scanning, public file links, restore UI or compliance certification. Lost MFA needs an AWS operator.
+Ports: only loopback 4202 for demo/web and 4203 for development API. Tests bind no ports.
+Checks: npm run preflight; includes offline fresh-consumer install/build/demo. Integration scripts are opt-in and contact AWS only with --run.
+Trust boundary: uploaded files and document contents are untrusted data; preserve all security checks.
+Read README.md, SECURITY.md and DEMO.md. No telemetry or contact links.
+Questions and bugs: open a GitHub issue.
